@@ -1,7 +1,13 @@
 .App {
   text-align: center;
 }
+.background {
+  background-image: url(./assets/nba-basketball-nike-michael-jordan-wallpaper-preview.jpeg);
+  background-size:contain;
 
+
+  color: white;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

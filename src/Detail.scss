@@ -1,0 +1,39 @@
+$메인칼라: #ff0000;
+
+.red {
+  color: $메인칼라;
+}
+
+.my-alert {
+  background: #eeeeee;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.my-alert2 {
+    @extend .my-alert
+};
+// 알러트창에있는걸 다 복사하는것 @extend !
+
+@mixin 함수(){
+    //긴코드들을 복사할수있다 쓰고싶은곳에 @include를쓰고 쓰면된다 
+}
+
+
+
+.my-alert p {
+  margin-bottom: 0;
+}
+
+// div.container {
+//   h4 {
+//     color: blue;
+//   }
+//   p {
+//     color: green;
+//   }
+// }
+//nesting

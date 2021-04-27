@@ -3,14 +3,16 @@
 }
 .background {
   background-image: url(./assets/nba-basketball-nike-michael-jordan-wallpaper-preview.jpeg);
-  background-size:contain;
-
-
-  color: white;
+  background-size: contain;
+  color: Red;
 }
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.mainButton {
+  background-color: red;
+  border-color: red;
 }
 
 @media (prefers-reduced-motion: no-preference) {

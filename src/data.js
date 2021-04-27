@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default [
     {
       id: 0,
@@ -8,7 +10,7 @@ export default [
     },
   {
     id: 1,
-    title: 'Jordan 1 Shattred Back Board ',
+    title: 'Jordan 1 Back Board ',
     content: 'Born in USA',
     price: 278000,
     

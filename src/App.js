@@ -7,6 +7,7 @@ import Data from './data';
 import Detail from './Detail';
 import { Link, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
+import Cart from './Cart';
 
 let 재고context = React.createContext();
 let 재고context2 = React.createContext();
@@ -66,8 +67,8 @@ function App() {
         <Route exact path="/detail/:id">
           <Detail shoes={shoes} 재고={재고} 재고변경={재고변경} />
         </Route>
-        <Route path="/:id">
-          <div>아무거나 적었을때 </div>
+        <Route path="/cart">
+          <Cart></Cart>
         </Route>
       </Switch>
       <button
@@ -91,10 +92,7 @@ function App() {
 }
 
 function Card(props) {
-
-
-let 재고 = useContext(재고context);
-
+  let 재고 = useContext(재고context);
 
   return (
     <div className="col-md-4">
@@ -106,9 +104,9 @@ let 재고 = useContext(재고context);
     </div>
   );
 }
-function Test(){
-  let 재고 = useContext(재고context)
-return <p>재고 : {재고}</p>
+function Test() {
+  let 재고 = useContext(재고context);
+  return <p>재고 : {재고}</p>;
 }
 
 export default App;

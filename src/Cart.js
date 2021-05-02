@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-function Cart() {
+import { connect } from 'react-redux';
+function Cart(props) {
   return (
     <div>
       <Table responsive>
@@ -13,16 +14,48 @@ function Cart() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
+          {props.state.map((a, i) => {
+            return (
+              <tr key={i}>
+                <td>{a.id}</td>
+                <td>{a.name}</td>
+                <td>{a.quan}</td>
+                <td>
+                  <button
+                    onClick={() => {
+                      props.dispatch({ type: '수량증가' });
+                    }}
+                  >
+                    +
+                  </button>
+                  <button
+                    onClick={() => {
+                      props.dispatch({ type: '수량감소' });
+                    }}
+                  >
+                    -
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </Table>
+      <div className="my-alert2">
+        <p>지금 구매하시면 신규할인 20%</p>
+        <button>닫기</button>
+      </div>
     </div>
   );
 }
+function state를props화(state) {
+  return {
+    state: state,
+  };
+}
+//5 이 함수는 스토어에있는 state를 props로 변환해주는 함수이다
 
-export default Cart;
+//4 컴포넌트에서 store에 있는 state를 사용하려면 function을 만들고
+//export default connect()()
+
+export default connect(state를props화)(Cart);

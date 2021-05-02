@@ -8,6 +8,7 @@ import Detail from './Detail';
 import { Link, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import Cart from './Cart';
+import Jordan from './Jordan'
 
 let 재고context = React.createContext();
 let 재고context2 = React.createContext();
@@ -70,6 +71,10 @@ function App() {
         <Route path="/cart">
           <Cart></Cart>
         </Route>
+        <Route path="/jordan">
+          <Jordan></Jordan>
+        </Route>
+
       </Switch>
       <button
         className="btn btn-primary"

@@ -7,7 +7,18 @@ import { Provider } from 'react-redux';
 //1 프로바이더 임포트해오기
 
 import { BrowserRouter } from 'react-router-dom';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
+
+let alert초기값 = true;
+
+function reducer2(state = alert초기값, 액션) {
+  if (액션.type === 'alert닫기') {
+    state = false;
+    return state;
+  } else {
+    return state;
+  }
+}
 
 let 기본state = [
   { id: 0, name: '멋진신발', quan: 2 },
@@ -15,6 +26,7 @@ let 기본state = [
 ];
 function reducer(state = 기본state, 액션) {
   if (액션.type === '수량증가') {
+    
     let copy = [...state];
     copy[0].quan++;
     return copy;
@@ -26,7 +38,8 @@ function reducer(state = 기본state, 액션) {
     return state;
   }
 }
-let store = createStore(reducer);
+let store = createStore(combineReducers({ reducer, reducer2 }));
+//리듀서가 2개이상일때 콤바인리듀서로 감싸준다
 
 //3 createStore에 state저장하기
 

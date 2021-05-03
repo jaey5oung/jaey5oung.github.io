@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import { connect } from 'react-redux';
+
 function Cart(props) {
   return (
     <div>
@@ -23,7 +24,7 @@ function Cart(props) {
                 <td>
                   <button
                     onClick={() => {
-                      props.dispatch({ type: '수량증가' });
+                      props.dispatch({ type: '수량증가', payload: { name: 'kim' } });
                     }}
                   >
                     +
@@ -41,16 +42,25 @@ function Cart(props) {
           })}
         </tbody>
       </Table>
-      <div className="my-alert2">
-        <p>지금 구매하시면 신규할인 20%</p>
-        <button>닫기</button>
-      </div>
+      {props.alert열렸니 === true ? (
+        <div className="my-alert2">
+          <p>지금 구매하시면 신규할인 20%</p>
+          <button
+            onClick={() => {
+              props.dispatch({ type: 'alert닫기' });
+            }}
+          >
+            닫기
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }
 function state를props화(state) {
   return {
-    state: state,
+    state: state.reducer,
+    alert열렸니: state.reducer2,
   };
 }
 //5 이 함수는 스토어에있는 state를 props로 변환해주는 함수이다

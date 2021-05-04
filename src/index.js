@@ -25,14 +25,17 @@ let 기본state = [
   { id: 1, name: '멋진신발1', quan: 3 },
 ];
 function reducer(state = 기본state, 액션) {
-  if (액션.type === '수량증가') {
-    
+  if (액션.type === '항목추가') {
     let copy = [...state];
-    copy[0].quan++;
+    copy.push(액션.payload);
+    return copy;
+  } else if (액션.type === '수량증가') {
+    let copy = [...state];
+    copy[액션.payload].quan++;
     return copy;
   } else if (액션.type === '수량감소') {
     let copy = [...state];
-    copy[0].quan--;
+    copy[액션.payload].quan--;
     return copy;
   } else {
     return state;

@@ -5,10 +5,10 @@ import React, { useState, useContext } from 'react';
 import { Navbar, NavDropdown, Nav, Button, Jumbotron } from 'react-bootstrap';
 import Data from './data';
 import Detail from './Detail';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Cart from './Cart';
-import Jordan from './Jordan'
+import Jordan from './Jordan';
 
 let 재고context = React.createContext();
 let 재고context2 = React.createContext();
@@ -74,7 +74,6 @@ function App() {
         <Route path="/jordan">
           <Jordan></Jordan>
         </Route>
-
       </Switch>
       <button
         className="btn btn-primary"
@@ -98,9 +97,14 @@ function App() {
 
 function Card(props) {
   let 재고 = useContext(재고context);
-
+  let history = useHistory();
   return (
-    <div className="col-md-4">
+    <div
+      className="col-md-4"
+      onClick={() => {
+        history.push('/detail/' + props.shoes.id);
+      }}
+    >
       <img src={props.shoes.picture} style={{ width: '100%' }} />
       <h4>{props.shoes.title}</h4>
       <p>{props.shoes.content}</p>

@@ -68,4 +68,8 @@ function state를props화(state) {
 //4 컴포넌트에서 store에 있는 state를 사용하려면 function을 만들고
 //export default connect()()
 
+
+
+
+
 export default connect(state를props화)(Cart);

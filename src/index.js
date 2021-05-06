@@ -26,9 +26,21 @@ let 기본state = [
 ];
 function reducer(state = 기본state, 액션) {
   if (액션.type === '항목추가') {
-    let copy = [...state];
-    copy.push(액션.payload);
-    return copy;
+    // state안에 id: 액션.payload 인게 있냐
+
+    let found = state.findIndex((a) => {
+      return a.id === 액션.payload.id;
+    });
+
+    if (found >= 0) {
+      let copy = [...state];
+      copy[found].quan++;
+      return copy;
+    } else {
+      let copy = [...state];
+      copy.push(액션.payload);
+      return copy;
+    }
   } else if (액션.type === '수량증가') {
     let copy = [...state];
     copy[액션.payload].quan++;
@@ -57,4 +69,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 //2 프로바이더 임포트해온걸 앱 컴포넌트를 감싸기
-reportWebVitals();
+// reportWebVitals();
+ServiceWorker.register();

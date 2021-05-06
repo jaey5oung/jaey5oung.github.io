@@ -1,17 +1,20 @@
 /* eslint-disable */
 
 import './App.css';
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, lazy, Suspense } from 'react';
 import { Navbar, NavDropdown, Nav, Button, Jumbotron } from 'react-bootstrap';
 import Data from './data';
-import Detail from './Detail';
+// import Detail from './Detail';
+let Detail = lazy(() => {
+  return import('./Detail.js');
+});
+
 import { Link, Route, Switch, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Cart from './Cart';
 import Jordan from './Jordan';
 
 let 재고context = React.createContext();
-let 재고context2 = React.createContext();
 //createContext 범위생성
 //같은 값을 공유할 HTML을 범위로 싸매기
 
@@ -66,7 +69,9 @@ function App() {
           </div>
         </Route>
         <Route exact path="/detail/:id">
-          <Detail shoes={shoes} 재고={재고} 재고변경={재고변경} />
+          <Suspense fallback={<div>로딩중이에요</div>}>
+            <Detail shoes={shoes} 재고={재고} 재고변경={재고변경} />
+          </Suspense>
         </Route>
         <Route path="/cart">
           <Cart></Cart>

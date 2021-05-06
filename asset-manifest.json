@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ebb560e7.chunk.css",
+    "main.js": "/static/js/main.64c6698d.chunk.js",
+    "main.js.map": "/static/js/main.64c6698d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d24d2473.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d24d2473.js.map",
+    "static/js/2.3463554b.chunk.js": "/static/js/2.3463554b.chunk.js",
+    "static/js/2.3463554b.chunk.js.map": "/static/js/2.3463554b.chunk.js.map",
+    "static/js/3.59029287.chunk.js": "/static/js/3.59029287.chunk.js",
+    "static/js/3.59029287.chunk.js.map": "/static/js/3.59029287.chunk.js.map",
+    "static/css/4.5d9e4d3e.chunk.css": "/static/css/4.5d9e4d3e.chunk.css",
+    "static/js/4.f5e5ae94.chunk.js": "/static/js/4.f5e5ae94.chunk.js",
+    "static/js/4.f5e5ae94.chunk.js.map": "/static/js/4.f5e5ae94.chunk.js.map",
+    "static/js/5.d3b0e946.chunk.js": "/static/js/5.d3b0e946.chunk.js",
+    "static/js/5.d3b0e946.chunk.js.map": "/static/js/5.d3b0e946.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/4.5d9e4d3e.chunk.css.map": "/static/css/4.5d9e4d3e.chunk.css.map",
+    "static/css/main.ebb560e7.chunk.css.map": "/static/css/main.ebb560e7.chunk.css.map",
+    "static/js/2.3463554b.chunk.js.LICENSE.txt": "/static/js/2.3463554b.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/nba-basketball-nike-michael-jordan-wallpaper-preview.65dc741e.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d24d2473.js",
+    "static/js/2.3463554b.chunk.js",
+    "static/css/main.ebb560e7.chunk.css",
+    "static/js/main.64c6698d.chunk.js"
+  ]
+}

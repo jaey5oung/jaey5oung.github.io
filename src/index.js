@@ -70,4 +70,3 @@ ReactDOM.render(
 );
 //2 프로바이더 임포트해온걸 앱 컴포넌트를 감싸기
 // reportWebVitals();
-ServiceWorker.register();

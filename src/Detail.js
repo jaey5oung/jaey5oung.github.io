@@ -23,6 +23,19 @@ function Detail(props) {
   let [스위치, 스위치변경] = useState(false);
 
   useEffect(() => {
+    var arr = localStorage.getItem('watched');
+    if (arr === null) {
+      arr = [];
+    } else {
+      arr = JSON.parse(arr);
+    }
+    arr.push(id);
+    arr = new Set(arr);
+    arr = [...arr];
+    localStorage.setItem('watched', JSON.stringify(arr));
+  }, []);
+
+  useEffect(() => {
     //2초 후에 저거 alert 창을 안보이게 해주셈
     let 타이머 = setTimeout(() => {
       alert변경(false);

@@ -14,8 +14,9 @@ let 박스 = styled.div`
 let 제목 = styled.h4`
   font-size: 25px;
   color: ${(props) => props.색상};
+  
 `;
-
+// 확인
 function Detail(props) {
   let [alert, alert변경] = useState(true);
   let [input, input변경] = useState('');

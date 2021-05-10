@@ -16,7 +16,7 @@ let 제목 = styled.h4`
   color: ${(props) => props.색상};
   
 `;
-// 확인
+// 확인2
 function Detail(props) {
   let [alert, alert변경] = useState(true);
   let [input, input변경] = useState('');

@@ -45,6 +45,7 @@ function Cart(props) {
       {props.alert열렸니 === true ? (
         <div className="my-alert2">
           <p>지금 구매하시면 신규할인 20%</p>
+        {/* 레파지 로컬에만 저장 */}
           <button
             onClick={() => {
               props.dispatch({ type: 'alert닫기' });

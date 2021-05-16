@@ -56,6 +56,13 @@ function App() {
                 더보기
               </Button>
             </p>
+            <select name="test" size="20"style={{width:"45px", height:"20px"}} multiple>
+              <option value="가나다라">가나나라</option>
+              <option value="가나다라마">가나나라마</option>
+              <option value="가나다라마바">가나나라마바</option>
+              <option value="가나다라마바사">가나나라마바사</option>
+              <option value="가나다라마바사아">가나나라마마바사아</option>
+            </select>
           </Jumbotron>
           <div className="container">
             <재고context.Provider value={재고}>
